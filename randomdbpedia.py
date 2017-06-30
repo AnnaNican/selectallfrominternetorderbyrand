@@ -3,6 +3,15 @@ from random import randint
 import requests
 from bs4 import BeautifulSoup
 import re
+import pandas as pd
+
+
+#log the time at which data was generated
+#make it a class that can be logged from flask app
+
+# create session dataframe to use for visualization of data
+columns = ['type', 'type_priority', 'num_items', 'item_name', 'item_url']
+df = pd.DataFrame(columns = columns)
 
 
 # first way to get random terms from db pedia
@@ -26,13 +35,18 @@ def getrandomfromwikidata():
 	print(term)
 	#return list/tuple/etc
 
-def gerrandomwikibooks():
+def getrandomwikibooks():
+	global book, book_url, df
 	r = requests.get('https://en.wikibooks.org/wiki/Special:RandomRootpage')
 	data = r.text
 	soup = BeautifulSoup(r.text)
 	booksoup = soup.findAll("h1", { "class" : "firstHeading" })
 	book = re.findall(r'<h1 class="firstHeading" id="firstHeading" lang="en">(.*)</h1>', str(booksoup))
+	book_url = re.findall(r'<a class="wbc-editpage" href="([^\"]*)', str(soup))
+	# id="firstHeading" lang="en">(.*)</h1>', str(booksoup))
 	print(book)
+	print(book_url)
+	df.loc[len(df)]=['Books', '0', '', book, book_url]
 
 def howmanydatatoget():
 	n_data = randint(1,10)
@@ -42,4 +56,10 @@ def howmanydatatoget():
 	#Get Data from WikiData
 	[getrandomfromwikidata() for _ in range(n_data)]
 	#Get Books from Dibipedia
-	[gerrandomwikibooks() for _ in range(n_books)]
+	[getrandomwikibooks() for _ in range(n_books)]
+
+
+def generate_random_knowledge():
+	#
+
+#append to dataframe
