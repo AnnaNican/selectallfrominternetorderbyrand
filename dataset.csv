@@ -1,34 +1,22 @@
-type,type_priority,num_items,item_name,item_url
-Knowledge,0,,['No label defined'],https://www.wikidata.org/wiki/Q24878638
-Knowledge,0,,['No label defined'],https://www.wikidata.org/wiki/Q18028813
-Knowledge,0,,[],https://www.wikidata.org/wiki/Q6694505
-Knowledge,0,,[],https://www.wikidata.org/wiki/Q1727557
-Knowledge,0,,['Bobrovn\\xedk'],https://www.wikidata.org/wiki/Q832782
-Knowledge,0,,['No label defined'],https://www.wikidata.org/wiki/Q24979647
-Knowledge,0,,['RNA polymerase-binding transcription factor ECIAI39_0149'],https://www.wikidata.org/wiki/Q22052944
-Books,0,,['Cookbook:Yogurt Curry Soup (Kadhi)'],['https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Cookbook%3AYogurt+Curry+Soup+%28Kadhi%29']
-Books,0,,['Cookbook:Five Spice Powder'],['https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Cookbook%3AFive+Spice+Powder']
-Books,0,,"[""Saylor.org's Ancient Civilizations of the World""]",['https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Saylor.org%27s+Ancient+Civilizations+of+the+World']
-Books,0,,['Peacebuilding Manual'],['https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Peacebuilding+Manual']
-Books,0,,['Cookbook:Cheese Stuffed Crust Pizza'],['https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Cookbook%3ACheese+Stuffed+Crust+Pizza']
-Books,0,,['Cookbook:Bacon-Wrapped Scallops'],['https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Cookbook%3ABacon-Wrapped+Scallops']
-Books,0,,['Cookbook:Cheese Spread on French Bread'],['https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Cookbook%3ACheese+Spread+on+French+Bread']
-Quotes,0,,[],['https://en.wikiquote.org/w/index.php?title=Bayonetta&amp;oldid=2256426']
-Quotes,0,,"['\\\\n\', \'Truth can never suffer from argument and inquiry; but may be essentally injured by the tyrannous interference of her pretended advocates. Impede her energies by the pains and penalties of law, and, like the Fame of <a href=""/wiki/Virgil"" title=""Virgil"">Virgil</a>, she will creep along the ground, diminutive in stature, and shrunk with apprehension: give free scope to all her tendencies, and she will soon collect her might, dilate herself to the fullness of her dimensions, and reach the stars.\\\\n']",['https://en.wikiquote.org/w/index.php?title=Gilbert_Wakefield&amp;oldid=2210870']
-Quotes,0,,"[""\\\\n', 'There is an element of performance to leadership, because you\\\\u2019re on public display, and I suppose I must be attracted to that. Although, probably more than the leadership, I\\\\u2019m more attracted to characters who are quite extreme, and could be considered borderline monsters. It\\\\u2019s something you can get your teeth into, and I find the psychology fascinating. It\\\\u2019s interesting that in searching for monsters to play, you often end up playing leaders.\\\\n""]",['https://en.wikiquote.org/w/index.php?title=Michael_Sheen&amp;oldid=1599102']
-Quotes,0,,"[""\\\\n', 'Out came Ms. Hilton in a Juicy track suit, chattering away like a gibbon on her jewel-encrusted cell phone. It was like magic, if magic were like a extra-strength laxative.\\\\n""]",['https://en.wikiquote.org/w/index.php?title=April_Winchell&amp;oldid=2114672']
-Quotes,0,,"[""\\\\n', 'You don\\'t think progress goes in a straight line, do you? Do you recognize that it is an ascending. accelerating, maybe even exponential curve? It takes Hell\\'s own time to get started, but when it goes it goes like a bomb.\\\\n""]",['https://en.wikiquote.org/w/index.php?title=Frederik_Pohl&amp;oldid=2211478']
-Quotes,0,,"['\\\\n\', \'The oldest and best known function for an ether is the conveyance of light, and hence the name ""luminiferous"" was applied to it, though at the present day many functions are known, and more will almost certainly be discovered.\\\\n']",['https://en.wikiquote.org/w/index.php?title=Oliver_Lodge&amp;oldid=2228487']
-Quotes,0,,[],['https://en.wikiquote.org/w/index.php?title=Kung_Fu_Panda&amp;oldid=2263295']
-Quotes,0,,[],['https://en.wikiquote.org/w/index.php?title=Dominion:_Prequel_to_the_Exorcist&amp;oldid=2162878']
-Quotes,0,,"[""\\\\n', 'We do not copy Google\\'s search results. We use multiple signals and approaches in ranking search results. Opt-in programs like the toolbar help us with clickstream data, one of many input signals we and other search engines use to help rank sites.\\\\n""]",['https://en.wikiquote.org/w/index.php?title=Bing&amp;oldid=1761214']
-Quotes,0,,"[""\\\\n', 'I\\'ve got no particular desire to play ten minute solos. Those were never valid anyway in my book -- never. It was just a cheap way of building up a tension in the audience...A solo should do something; it shouldn\\'t just be there as a cosmetic. It should have some aim, take the tune somewhere. I\\'m not saying I can do it, but I try and take the tune somewhere.\\\\n""]",['https://en.wikiquote.org/w/index.php?title=Jeff_Beck&amp;oldid=2099631']
-Quotes,0,,[],['https://en.wikiquote.org/w/index.php?title=Criminal_Minds_(season_11)&amp;oldid=2254573']
-Quotes,0,,[],['https://en.wikiquote.org/w/index.php?title=The_Medallion&amp;oldid=2221070']
-Quotes,0,,[],['https://en.wikiquote.org/w/index.php?title=Carriers_(film)&amp;oldid=2050704']
-Quotes,0,,"[""\\\\n', 'Looking around and sizing the situation, it seems to me that the real danger before our country is the crushing down of individual freedom and initiative by the steamroller of government authority. Already we see indications of this in the . . . legislative measures having an expropriatory [<i>sic</i>] character and the passage of taxation and other bills calculated to kill private enterprise in the field of industrial development . . . Democracy without freedom for the individual is a sham and a delusion.\\\\n""]",['https://en.wikiquote.org/w/index.php?title=C._V._Raman&amp;oldid=2040512']
-Quotes,0,,"[""\\\\n', 'It is the same case with all those pretended syllogistical reasonings, which may be found in every other branch of learning, except the sciences of quantity and number; and these may safely, I think, be pronounced the only proper objects of knowledge and demonstration.\\\\n""]",['https://en.wikiquote.org/w/index.php?title=Quantity&amp;oldid=2238262']
-Quotes,0,,[],['https://en.wikiquote.org/w/index.php?title=Turnus&amp;oldid=2204089']
-Quotes,0,,[],['https://en.wikiquote.org/w/index.php?title=Ninja_Scroll&amp;oldid=2050375']
-Quotes,0,,[],['https://en.wikiquote.org/w/index.php?title=Angie_(1994_film)&amp;oldid=2016492']
-Quotes,0,,"[""\\\\n', 'It is easy to defend freedom of speech when the message is something many people find at least reasonable. But the defense of freedom of speech is most critical when the message is one most people find repulsive. That was true when the Nazis marched in Skokie. It remains true today.\\\\n""]",['https://en.wikiquote.org/w/index.php?title=American_Civil_Liberties_Union&amp;oldid=2130997']
+type,type_priority,item_name,item_url
+Knowledge,0,['Category:Film production companies of Ukraine'],https://www.wikidata.org/wiki/Q13262238
+Knowledge,0,"[""In Daddy's Pocket""]",https://www.wikidata.org/wiki/Q12317972
+Knowledge,0,['Category:1959 in tennis'],https://www.wikidata.org/wiki/Q17404207
+Knowledge,0,['No label defined'],https://www.wikidata.org/wiki/Q22563390
+Knowledge,0,[],https://www.wikidata.org/wiki/Q16600503
+Books,0,['Ship Resistance'],['https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Ship+Resistance']
+Books,0,['Chess Strategy'],['https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Chess+Strategy']
+Books,0,['Cookbook:Bengal Potatoes'],['https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Cookbook%3ABengal+Potatoes']
+Books,0,['Immunology'],['https://www.wikidata.org/wiki/Special:EntityPage/Q101929#sitelinks-wikibooks']
+Books,0,['Macedonian'],['https://www.wikidata.org/wiki/Special:EntityPage/Q9296#sitelinks-wikibooks']
+Books,0,['Cookbook:Holzknechtnocken'],['https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Cookbook%3AHolzknechtnocken']
+Books,0,['Legal and Regulatory Issues in the Information Economy'],['https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Legal+and+Regulatory+Issues+in+the+Information+Economy']
+Books,0,['Cookbook:Southern Cornbread'],['https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Cookbook%3ASouthern+Cornbread']
+Books,0,['Pixlr Editor'],['https://www.wikidata.org/wiki/Special:EntityPage/Q19367531#sitelinks-wikibooks']
+Books,0,['Teaching Elementary School Health Education'],['https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Teaching+Elementary+School+Health+Education']
+Quotes,0,"['\\\\n\', \'All the bloodshed caused by the warlike disposition of <a href=""/wiki/Napoleon_I_of_France"" title=""Napoleon I of France"">Napoleon</a> is as nothing compared to the myriads of persons who have sunk into their graves through a misplaced confidence in the value of beef tea.\\\\n']",['https://en.wikiquote.org/w/index.php?title=John_Milner_Fothergill&amp;oldid=2209461']
+Quotes,0,"['\\\\n\', ""<b>Getting down to brass tacks, how in the Hell are you going to explain general American n- \'I\' except genetically?</b> It\'s disturbing, I know, but (more) non-committal conservatism is only dodging, after all, isn\'t it? Great simplifications are in store for us. \\\\u2026 It seems to me that only now that is American linguistics becoming really interesting, at least in its ethnological bearings.\\\\n']",['https://en.wikiquote.org/w/index.php?title=Edward_Sapir&amp;oldid=2242315']
+Quotes,0,"[""\\\\n', 'For the future I cease, Death approaches with little delay,<br/>\\\\nSince the dragons of Laune and Lane and Lee are destroyed;<br/>\\\\nI\\\\u2019ll follow the heroes far from the light of day,<br/>\\\\nThe princes my ancestors followed before Christ died.\\\\n""]",['https://en.wikiquote.org/w/index.php?title=Egan_O%27Rahilly&amp;oldid=1562506']
+Music,0,Robot_E,https://robote.bandcamp.com
+Music,0,Cricket,https://cricket2.bandcamp.com
+Music,0,Stormatron 6000,https://stormatron6000.bandcamp.com

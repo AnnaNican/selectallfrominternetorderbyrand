@@ -1,4 +1,3 @@
-# from SPARQLWrapper import SPARQLWrapper, JSON
 from random import randint
 import requests
 from bs4 import BeautifulSoup
@@ -6,21 +5,18 @@ import re
 import pandas as pd
 import random
 
+#clean html garbage
+# swap wiki knowledge to science
+# add travel destinatiosns
+
+
 #log the time at which data was generated
 #make it a class that can be logged from flask app
 
 # create session dataframe to use for visualization of data
-columns = ['type', 'type_priority', 'num_items', 'item_name', 'item_url']
+columns = ['type', 'type_priority', 'item_name', 'item_url']
 df = pd.DataFrame(columns = columns)
 
-
-# first way to get random terms from db pedia
-# def get_randomterms_dbpedia():
-# 	sparql = SPARQLWrapper("http://dbpedia.org/sparql")
-# 	sparql.setReturnFormat(JSON)
-# 	query = "SELECT ?s WHERE {?s ?p ?o } ORDER BY RAND() LIMIT 10"
-# 	sparql.setQuery(query)  # the previous query as a literal string
-# 	sparql.query().convert()
 
 # another way to get random articles with random number
 def getrandomfromwikidata():
@@ -33,7 +29,7 @@ def getrandomfromwikidata():
 	termsoup = soup.findAll("span", { "class" : "wikibase-title-label" })
 	term = re.findall(r'<span class="wikibase-title-label">(.*)</span>', str(termsoup))
 	print(term)
-	df.loc[len(df)]=['Knowledge', '0', '', term, randitemname]
+	df.loc[len(df)]=['Knowledge', '0', term, randitemname]
 	#return list/tuple/etc
 
 def getrandomwikibooks():
@@ -47,7 +43,7 @@ def getrandomwikibooks():
 	# id="firstHeading" lang="en">(.*)</h1>', str(booksoup))
 	print(book)
 	print(book_url)
-	df.loc[len(df)]=['Books', '0', '', book, book_url]
+	df.loc[len(df)]=['Books', '0', book, book_url]
 
 def cleanhtml(raw_html):
   cleanr = re.compile('<.*?>')
@@ -70,23 +66,60 @@ def getrandomquote():
 		quote_url = re.findall(r'Retrieved from "<a dir="ltr" href="([^\"]*)', str(soup))
 		print(quote)
 		print(quote_url)
-		df.loc[len(df)]=['Quotes', '0', '', quote, quote_url]
+		df.loc[len(df)]=['Quotes', '0', quote, quote_url]
 
 
+def getrandomartist():
+	# Look at bandcamp https://bandcamp.com/artist_index to get the highest page index
+	page_index = 1+int(2283.0 * random.random())
+	r = requests.get('https://bandcamp.com/artist_index?page=%s' % page_index)
+	if r.status_code != 200:
+		raise RuntimeError( '%s' % r )
+	soup = BeautifulSoup(r.text, 'html.parser')
+	# get a random artist
+	content = soup.select_one('.results')
+	artists = content.find_all('a')
+	artist = random.choice( artists )
+	print(artist.attrs['title'])
+	print(artist.attrs['href'])
+	df.loc[len(df)]=['Music', '0', artist.attrs['title'], artist.attrs['href']]
+	# return dict(
+	# 	artist = artist.attrs['title'],
+	# 	url = artist.attrs['href']
+	# )
+
+
+def getrandomdestination():
+	r = requests.get('https://earthroulette.com/random-cheap-flights-to-anywhere/')
+	data = r.text
+	soup = BeautifulSoup(r.text)
+	mainbody = soup.findAll("div", { "class" : "caption center-align homepage-padding-top" })
+	# print mainbody
+	destination = re.findall(r'<strong>(.*)<\/strong', str(mainbody))[0]
+	print(destination)
+	destnation_url = str('https://en.wikivoyage.org/wiki/' + destination)
+	print(destnation_url)
 
 def howmanydatatoget():
 	n_data = randint(1,10)
 	n_books = randint(1,10)
 	n_quotes = randint(1,10)
+	n_songs = randint(1,10)
+	n_destinations = randint(1,10)
 	print(n_data)
 	print(n_books)
 	print(n_quotes)
+	print(n_destinations)
 	#Get Data from WikiData
 	[getrandomfromwikidata() for _ in range(n_data)]
 	#Get Books from Dibipedia
 	[getrandomwikibooks() for _ in range(n_books)]
 	#Get Random Quotes
 	[getrandomquote() for _ in range(n_quotes)]
+	#Get Random SOng
+	[getrandomartist() for _ in range(n_songs)]
+	#Get Random Destination
+	[getrandomdestination() for _ in range(n_destinations)]
 
 
 
