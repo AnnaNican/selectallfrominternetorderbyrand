@@ -18,19 +18,16 @@ columns = ['type', 'type_priority', 'item_name', 'item_url']
 df = pd.DataFrame(columns = columns)
 
 
-# another way to get random articles with random number
-def getrandomfromwikidata():
-	randomitemnum = randint(1,25348886)
-	randitemname = str("https://www.wikidata.org/wiki/Q"+str(randomitemnum))
-	print(randitemname)
-	r = requests.get(randitemname)
+def getrandomknowledge():
+	r = requests.get('https://en.wikipedia.org/wiki/Special:RandomRootpage')
 	data = r.text
 	soup = BeautifulSoup(r.text)
-	termsoup = soup.findAll("span", { "class" : "wikibase-title-label" })
-	term = re.findall(r'<span class="wikibase-title-label">(.*)</span>', str(termsoup))
-	print(term)
-	df.loc[len(df)]=['Knowledge', '0', term, randitemname]
-	#return list/tuple/etc
+	knowledgesoup = soup.findAll("h1", { "class" : "firstHeading" })
+	knowledge = re.findall(r'>(.*?)<\/', str(knowledgesoup))
+	knowledge_url = re.findall(r'<a class="wbc-editpage" href="([^\"]*)', str(soup))
+	print(knowledge)
+	print(knowledge_url)
+	df.loc[len(df)]=['Knowledge', '0', knowledge, knowledge_url]
 
 def getrandomwikibooks():
 	global book, book_url, df
@@ -111,7 +108,7 @@ def howmanydatatoget():
 	print(n_quotes)
 	print(n_destinations)
 	#Get Data from WikiData
-	[getrandomfromwikidata() for _ in range(n_data)]
+	[getrandomknowledge() for _ in range(n_data)]
 	#Get Books from Dibipedia
 	[getrandomwikibooks() for _ in range(n_books)]
 	#Get Random Quotes
@@ -149,3 +146,6 @@ if __name__ == "__main__":
 # draw =  choice([a,b,c], 1, p=probability_distribution)
 
 #append to dataframe
+
+
+

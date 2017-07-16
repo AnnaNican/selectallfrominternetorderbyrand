@@ -12,4 +12,8 @@ this project was done to break away from the algorythmic tailored personalizatio
 
 initially we thought to give the user one option per category, but then we decided to randomly optimize the number of options available. hence, this is where the project is - it also randomly assignes a priority of the category and randomly assigns how many options to give you.
 
-Viva la randomness
+Viva la randomness and Viva la Internet
+
+
+#another alternative to travel Spin:
+https://travelsp.in/destination/las_palmas
