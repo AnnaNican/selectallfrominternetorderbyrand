@@ -1,4 +1,4 @@
-from SPARQLWrapper import SPARQLWrapper, JSON
+# from SPARQLWrapper import SPARQLWrapper, JSON
 from random import randint
 import requests
 from bs4 import BeautifulSoup
@@ -89,25 +89,30 @@ def howmanydatatoget():
 	[getrandomquote() for _ in range(n_quotes)]
 
 
-def generate_random_knowledge():
-	#
 
-def weighted_choice(choices):
-   total = sum(w for c, w in choices)
-   r = random.uniform(0, total)
-   upto = 0
-   for c, w in choices:
-      if upto + w >= r:
-         return c
-      upto += w
-   assert False, "Shouldn't get here"
+if __name__ == "__main__":
+	howmanydatatoget()
+	df.to_csv('dataset.csv', index = False)
 
-weighted_choice([('a',1.0),('b',2.0),('c',3.0)])
+# def generate_random_knowledge():
+# 	#
+
+# def weighted_choice(choices):
+#    total = sum(w for c, w in choices)
+#    r = random.uniform(0, total)
+#    upto = 0
+#    for c, w in choices:
+#       if upto + w >= r:
+#          return c
+#       upto += w
+#    assert False, "Shouldn't get here"
+
+# weighted_choice([('a',1.0),('b',2.0),('c',3.0)])
 
 
-from numpy.random import choice
-draw = choice(list_of_candidates, number_of_items_to_pick, p=probability_distribution)
+# from numpy.random import choice
+# draw = choice(list_of_candidates, number_of_items_to_pick, p=probability_distribution)
 
-draw =  choice([a,b,c], 1, p=probability_distribution)
+# draw =  choice([a,b,c], 1, p=probability_distribution)
 
 #append to dataframe
