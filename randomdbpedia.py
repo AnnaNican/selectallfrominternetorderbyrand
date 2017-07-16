@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import pandas as pd
-
+import random
 
 #log the time at which data was generated
 #make it a class that can be logged from flask app
@@ -33,6 +33,7 @@ def getrandomfromwikidata():
 	termsoup = soup.findAll("span", { "class" : "wikibase-title-label" })
 	term = re.findall(r'<span class="wikibase-title-label">(.*)</span>', str(termsoup))
 	print(term)
+	df.loc[len(df)]=['Knowledge', '0', '', term, randitemname]
 	#return list/tuple/etc
 
 def getrandomwikibooks():
@@ -48,18 +49,65 @@ def getrandomwikibooks():
 	print(book_url)
 	df.loc[len(df)]=['Books', '0', '', book, book_url]
 
+def cleanhtml(raw_html):
+  cleanr = re.compile('<.*?>')
+  cleantext = re.sub(cleanr, '', raw_html)
+  return cleantext
+
+
+def getrandomquote():
+	global quote
+	quote = []
+	while not quote:
+		r = requests.get('https://en.wikiquote.org/wiki/Special:RandomRootpage')
+		data = r.text
+		soup = BeautifulSoup(r.text)
+		mainbody = soup.findAll("div", { "class" : "mw-body-content" })
+		quotesoup = re.findall(r'<h2><span class="mw-headline" id="Quotes">Quotes<\/span>(.*?)<\/h2>(.*?)<li>(.*?)(\/li)', str(mainbody))
+		quote = re.findall(r'<ul>(.*?)<ul>', str(quotesoup))
+		print(quote)
+		#stip quote from all html garbage
+		quote_url = re.findall(r'Retrieved from "<a dir="ltr" href="([^\"]*)', str(soup))
+		print(quote)
+		print(quote_url)
+		df.loc[len(df)]=['Quotes', '0', '', quote, quote_url]
+
+
+
 def howmanydatatoget():
 	n_data = randint(1,10)
 	n_books = randint(1,10)
+	n_quotes = randint(1,10)
 	print(n_data)
 	print(n_books)
+	print(n_quotes)
 	#Get Data from WikiData
 	[getrandomfromwikidata() for _ in range(n_data)]
 	#Get Books from Dibipedia
 	[getrandomwikibooks() for _ in range(n_books)]
+	#Get Random Quotes
+	[getrandomquote() for _ in range(n_quotes)]
 
 
 def generate_random_knowledge():
 	#
+
+def weighted_choice(choices):
+   total = sum(w for c, w in choices)
+   r = random.uniform(0, total)
+   upto = 0
+   for c, w in choices:
+      if upto + w >= r:
+         return c
+      upto += w
+   assert False, "Shouldn't get here"
+
+weighted_choice([('a',1.0),('b',2.0),('c',3.0)])
+
+
+from numpy.random import choice
+draw = choice(list_of_candidates, number_of_items_to_pick, p=probability_distribution)
+
+draw =  choice([a,b,c], 1, p=probability_distribution)
 
 #append to dataframe
