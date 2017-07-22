@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <meta charset="utf-8">
 <title>SANKEY Experiment</title>
 <style>
@@ -124,7 +125,9 @@ d3.csv("sankey.csv", function(error, data) {
       .on("drag", dragmove));
 
 // add the rectangles for the nodes
-  node.append("rect")
+  node.append("a")
+	  .attr("xlink:href", function(d){ return get_url_from_name(d.name); })//console.info(d); return d.item_url; })
+	  .append("rect")
       .attr("height", function(d) { return d.dy; })
       .attr("width", sankey.nodeWidth())
       .style("fill", function(d) { 
@@ -139,14 +142,12 @@ d3.csv("sankey.csv", function(error, data) {
   function get_url_from_name(name){
 	for( var i=0, l=data.length; i<l; i+=1 ){
 		if( data[i].target === name ){
-			console.info( data[i].item_url );
 			return data[i].item_url;
 		}
 	}
 	return '#';
   }
-  node.append("a")
-      .attr("href", function(d){ get_url_from_name(d.name); })//console.info(d); return d.item_url; })
+  node
     .append("text")
       .attr("x", -6)
       .attr("y", function(d) { return d.dy / 2; })
