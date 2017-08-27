@@ -10,8 +10,7 @@ from flask import Flask
 from flask import render_template
 from flask import make_response
 
-import subprocess, os
-from lib.getrandom import *
+from lib.getrandom import howmanydatatoget
 
 app = Flask(__name__)
 
@@ -23,31 +22,10 @@ def hello():
 @app.route("/results.csv", methods=['GET', 'POST'])
 def result():
 	si = StringIO.StringIO()
-	# cw = csv.writer(si)
-	
-	# TODO: replace csvList with the actual random list
-	# csvList = [["source", "type_priority", "num_items", "target", "item_url", "value"]]
-	# print(csvList)
-	# csvList.extend(howmanydatatoget())
-	# print(csvList)
-	csvList = howmanydatatoget()
-	csvList.to_csv(si, index=False)
-	# dataset.to_csv('dataset.csv', index = False)
-	# array = dataset.as_matrix()
-	# print(dataset)
-	# csvList = [
-	# 	'a b c d e f'.split(),
-	# 	'1 2 3 4 5 6'.split(),
-	# 	'1 2 3 4 5 6'.split(),
-	# 	'1 2 3 4 5 6'.split(),
-	# 	'1 2 3 4 5 6'.split(),
-	# 	'1 2 3 4 5 6'.split()
-	# ]
-	# ------------------------
-	
-	# cw.writerows(csvList)
+	dataframe = howmanydatatoget()
+	dataframe.to_csv(si, index=False)
 	output = make_response(si.getvalue())
-	output.headers["Content-Disposition"] = "attachment; filename=export.csv"
+	#output.headers["Content-Disposition"] = "attachment; filename=export.csv"
 	output.headers["Content-type"] = "text/csv"
 	return output
 
