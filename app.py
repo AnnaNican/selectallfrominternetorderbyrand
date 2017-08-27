@@ -10,6 +10,9 @@ from flask import Flask
 from flask import render_template
 from flask import make_response
 
+import subprocess, os
+from lib.getrandom import *
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -23,6 +26,10 @@ def result():
 	cw = csv.writer(si)
 	
 	# TODO: replace csvList with the actual random list
+	dataset = howmanydatatoget()
+	# dataset.to_csv('dataset.csv', index = False)
+	# array = dataset.as_matrix()
+	print(dataset)
 	csvList = [
 		'a b c d e f'.split(),
 		'1 2 3 4 5 6'.split(),
