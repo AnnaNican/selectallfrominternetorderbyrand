@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import pandas as pd
+import numpy as np
 import random
 
 #clean html garbage
@@ -118,8 +119,15 @@ def howmanydatatoget():
 	[getrandomartist() for _ in range(n_songs)]
 	#Get Random Destination
 	[getrandomdestination() for _ in range(n_destinations)]
-	array = df.as_matrix()
-	return array
+	# df = df.fillna(0)
+	# df = df['item_name'].replace('[]', 0)
+	# array = df.as_matrix()
+	# array = np.insert(array, 0, ["source", "type_priority", "num_items", "target", "item_url", "value"])
+	# return array
+	df['value'] = 1
+	df['num_items'] = 0
+	df.rename(columns={'type': 'source', 'item_name': 'target'}, inplace=True)
+	return df
 
 
 
