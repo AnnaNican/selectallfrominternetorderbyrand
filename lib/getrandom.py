@@ -26,9 +26,7 @@ def getrandomknowledge():
 	knowledgesoup = soup.findAll("h1", { "class" : "firstHeading" })
 	knowledge = re.findall(r'>(.*?)<\/', str(knowledgesoup))
 	knowledge_url = re.findall(r'<a class="wbc-editpage" href="([^\"]*)', str(soup))
-	print(knowledge)
-	print(knowledge_url)
-	df.loc[len(df)]=['Knowledge', '0', knowledge, knowledge_url]
+	df.loc[len(df)]=['Knowledge', '0', knowledge[0], knowledge_url[0]]
 
 def getrandomwikibooks():
 	global book, book_url, df
@@ -41,7 +39,7 @@ def getrandomwikibooks():
 	# id="firstHeading" lang="en">(.*)</h1>', str(booksoup))
 	print(book)
 	print(book_url)
-	df.loc[len(df)]=['Books', '0', book, book_url]
+	df.loc[len(df)]=['Books', '0', book[0], book_url[0]]
 
 def cleanhtml(raw_html):
   cleanr = re.compile('<.*?>')
@@ -64,7 +62,7 @@ def getrandomquote():
 		quote_url = re.findall(r'Retrieved from "<a dir="ltr" href="([^\"]*)', str(soup))
 		print(quote)
 		print(quote_url)
-		df.loc[len(df)]=['Quotes', '0', quote, quote_url]
+		df.loc[len(df)]=['Quotes', '0', quote, quote_url[0]]
 
 
 def getrandomartist():
@@ -99,16 +97,11 @@ def getrandomdestination():
 	print(destnation_url)
 
 def howmanydatatoget():
-	global array
 	n_data = randint(1,10)
 	n_books = randint(1,10)
 	n_quotes = randint(1,10)
 	n_songs = randint(1,10)
 	n_destinations = randint(1,10)
-	print(n_data)
-	print(n_books)
-	print(n_quotes)
-	print(n_destinations)
 	#Get Data from WikiData
 	[getrandomknowledge() for _ in range(n_data)]
 	#Get Books from Dibipedia
@@ -135,28 +128,7 @@ if __name__ == "__main__":
 	howmanydatatoget()
 	df.to_csv('dataset.csv', index = False)
 
-# def generate_random_knowledge():
-# 	#
 
-# def weighted_choice(choices):
-#    total = sum(w for c, w in choices)
-#    r = random.uniform(0, total)
-#    upto = 0
-#    for c, w in choices:
-#       if upto + w >= r:
-#          return c
-#       upto += w
-#    assert False, "Shouldn't get here"
-
-# weighted_choice([('a',1.0),('b',2.0),('c',3.0)])
-
-
-# from numpy.random import choice
-# draw = choice(list_of_candidates, number_of_items_to_pick, p=probability_distribution)
-
-# draw =  choice([a,b,c], 1, p=probability_distribution)
-
-#append to dataframe
 
 
 
